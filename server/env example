@@ -1,0 +1,10 @@
+DATABASE = url link
+DB_NAME = DB name
+
+JWT_SECRET = secret key
+
+PORT = port number
+
+CLOUD_NAME = your cloud name
+API_KEY = your api key
+APP_SECRET = your api secret
