@@ -30,8 +30,16 @@ const tokenSlice = createSlice({
         console.log("Error storing token in local storage:", error);
       }
     },
+    clearToken: (state) => {
+      state.token = null;
+      try {
+        localStorage.removeItem("token");
+      } catch (error) {
+        console.log("Error removing token from local storage:", error);
+      }
+    },
   },
 });
 
-export const { setToken } = tokenSlice.actions;
-export default tokenSlice.actions;
+export const { setToken, clearToken } = tokenSlice.actions;
+export default tokenSlice.reducer;

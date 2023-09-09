@@ -16,7 +16,7 @@ export = {
 
   getUserProfile: async (id: string) => {
     const objectId = new mongoose.Types.ObjectId(id);
-    console.log(objectId);
+    // console.log(objectId);
 
     const mongooseObject = await User.findById(objectId);
     return mongooseObject;

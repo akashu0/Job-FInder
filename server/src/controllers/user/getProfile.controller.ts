@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { DepenteniciesData } from "../../entities/interface";
+import { CustomRequest } from "../../util/expressRoutes";
 
 export = (dependencies: DepenteniciesData): any => {
   const {
@@ -12,7 +13,11 @@ export = (dependencies: DepenteniciesData): any => {
     next: NextFunction
   ) => {
     try {
-      const { userId } = req.params;
+      // const { userId } = req.params;
+      // console.log(userId);
+      const customReq = req as CustomRequest;
+      const userId = customReq.payload ?? "";
+
       const userProfile = await getUserProfile_UseCase(dependencies).execute({
         userId,
       });

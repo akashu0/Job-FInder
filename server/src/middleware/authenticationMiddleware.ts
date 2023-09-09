@@ -1,18 +1,20 @@
 import { NextFunction, Request, Response } from "express";
 import { HttpStatus } from "../util/httpStatus";
 import { authService } from "../controllers/services/authServices";
+import { CustomRequest } from "../util/expressRoutes";
 
 const authenticationMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
+  const customReq = req as CustomRequest;
   let token: string | null = "";
   if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
+    customReq.headers.authorization &&
+    customReq.headers.authorization.startsWith("Bearer")
   ) {
-    token = req.headers.authorization.split(" ")[1];
+    token = customReq.headers.authorization.split(" ")[1];
   }
 
   if (!token) {
@@ -22,13 +24,15 @@ const authenticationMiddleware = (
     });
   }
   try {
-    const decoded = authService.verifyToken(token);
-    if (!decoded) {
-      return res.status(HttpStatus.UNAUTHORIZED).json({
-        success: false,
-        message: "UNAUTHORIZED PERSON",
-      });
-    }
+    const { id, role }: any = authService.verifyToken(token);
+    customReq.payload = id;
+
+    // if (!decoded) {
+    //   return res.status(HttpStatus.UNAUTHORIZED).json({
+    //     success: false,
+    //     message: "UNAUTHORIZED PERSON",
+    //   });
+    // }
     next();
   } catch (error: any) {
     console.log(error.message);

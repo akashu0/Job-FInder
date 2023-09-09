@@ -35,7 +35,11 @@ export = (dependencies: DepenteniciesData): any => {
         throw new Error("error in function excutions");
       }
 
-      res.json(newUserData);
+      res.json({
+        success: true,
+        message: "user register succesfully",
+        data: newUserData,
+      });
     } catch (error: any) {
       throw new Error(error.message);
     }

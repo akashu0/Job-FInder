@@ -9,12 +9,8 @@ export = (dependencies: DepenteniciesData) => {
   const { getProfileController, createProfileController, userLoginController } =
     userController(dependencies);
 
-  router.get("/:userId", authenticationMiddleware, getProfileController);
-  router.post(
-    "/register-user",
-    authenticationMiddleware,
-    createProfileController
-  );
+  router.get("/", authenticationMiddleware, getProfileController);
+  router.post("/register-user", createProfileController);
   router.post("/login", userLoginController);
 
   return router;
