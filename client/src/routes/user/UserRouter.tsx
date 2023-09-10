@@ -6,9 +6,10 @@ import UserHomePage from "../../pages/user/UserHomePage";
 function UserRouter() {
   return (
     <Routes>
+      <Route path="/*" element={<UserHomePage />} />
       <Route path="/login" element={<UserLoginPage />} />
       <Route path="/register-user" element={<UserRegisterPage />} />
-      <Route path="/home" element={<UserHomePage />} />
+      {/* <Route path="/home" element={<UserHomePage />} /> */}
     </Routes>
   );
 }

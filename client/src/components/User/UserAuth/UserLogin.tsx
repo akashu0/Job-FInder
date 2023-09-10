@@ -39,7 +39,7 @@ function UserLogin() {
       dispatch(loginSuccess());
     }
     if (isLoggedIn === true) {
-      navigate("/user/home");
+      navigate("/user/dashboard");
     }
   }, [navigate]);
 

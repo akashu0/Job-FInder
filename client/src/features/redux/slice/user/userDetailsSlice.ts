@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { userData } from "../../../axios/api/user/userDetails";
 
-export const fetchUser: any = createAsyncThunk("user/fetchUser", async () => {
+export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
   const response = await userData();
   return response;
 });
