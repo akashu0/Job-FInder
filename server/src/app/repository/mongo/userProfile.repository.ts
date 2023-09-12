@@ -8,7 +8,9 @@ export = {
     return await newProfile.save();
   },
   getUserByProfile: async (id: string) => {
-    const getprofile = await userProfile.findOne({ userId: id });
+    const getprofile = await userProfile
+      .findOne({ userId: id })
+      .populate("userId");
     return getprofile;
   },
   editUserProfile: async (id: string, data: any) => {

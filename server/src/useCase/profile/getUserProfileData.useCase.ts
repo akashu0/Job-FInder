@@ -8,7 +8,7 @@ export const getUserProfileData_UseCase = (dependencies: DepenteniciesData) => {
   if (!profileRepository)
     throw new Error("The user repository should be dependencie");
 
-  const execute = ({ userId }: { userId: string }) => {
+  const execute = (userId: string) => {
     return profileRepository.getUserByProfile(userId);
   };
   return {

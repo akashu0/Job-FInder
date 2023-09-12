@@ -17,7 +17,7 @@ export = (dependencies: DepenteniciesData) => {
     updateUserProfileController
   );
 
-  router.get("/:userId", authenticationMiddleware, getUserProfileController);
+  router.get("/", authenticationMiddleware, getUserProfileController);
 
   return router;
 };

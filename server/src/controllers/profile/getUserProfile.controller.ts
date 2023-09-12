@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import { DepenteniciesData } from "../../entities/interface";
+import { CustomRequest } from "../../util/expressRoutes";
+import { HttpStatus } from "../../util/httpStatus";
 
 export = (dependencies: DepenteniciesData): any => {
   const {
@@ -8,12 +10,15 @@ export = (dependencies: DepenteniciesData): any => {
 
   const getProfile = async (req: Request, res: Response) => {
     try {
-      const { userId } = req.params;
-      const userData = await getUserProfileData_UseCase(dependencies).execute({
-        userId,
-      });
+      // const { userId } = req.params;
+      const customReq = req as CustomRequest;
+      const userId = customReq.payload ?? "";
+
+      const userData = await getUserProfileData_UseCase(dependencies).execute(
+        userId
+      );
       if (!userData) {
-        return res.json({
+        return res.status(HttpStatus.BAD_REQUEST).json({
           success: false,
           message: "No profile Exists",
         });
