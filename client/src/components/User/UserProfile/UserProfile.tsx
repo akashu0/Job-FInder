@@ -23,13 +23,13 @@ function UserProfile() {
   }, []);
   // console.log(userDetails?.userId);
   return (
-    <div className="pl-16 pr-16 pt-24">
+    <div className=" pt-16 px-11 items-center overflow-hidden  ">
       {/* <div className="relative mt-8 h-72 w-full overflow-hidden rounded-xl bg-[url(https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80)] bg-cover	bg-center">
         <div className="absolute inset-0 h-full w-full bg-purple-500/50" />
       </div> */}
 
-      <Card className="mx-3 -mt-16 mb-6 lg:mx-4 shadow-lg shadow-gray-400">
-        <CardBody className="p-4">
+      <Card className="md:flex border md:border-black  ">
+        <CardBody className="md:shrink-0">
           <div className="flex flex-row-reverse">
             <Link to={"/employer/edit-profile"}>
               <Tooltip content="Edit Profile">
@@ -46,14 +46,14 @@ function UserProfile() {
                 className="rounded-lg shadow-lg shadow-blue-gray-500/40"
               />
               <div>
-                <Typography variant="h5" color="blue-gray" className="mb-1">
+                <Typography variant="h5" color="blue-gray" className="mb-1 ">
                   {userDetails?.userId.name ?? ""}
                 </Typography>
                 <Typography
                   variant="small"
                   className="font-normal text-blue-gray-600"
                 >
-                  {/* {userDetails?.?? ""} */}
+                  {userDetails?.is_Active ?? ""}
                 </Typography>
               </div>
             </div>
@@ -64,129 +64,73 @@ function UserProfile() {
                 {userDetails?.bio ?? ""}
               </div>
             </Typography>
-            <hr className="my-1 border-blue-gray-50" />
-            <div>
-              <CardBody className="p-0">
-                <ul className="flex flex-col gap-4 p-0">
-                  <li className="flex items-center gap-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-semibold capitalize"
-                    >
-                      Age:
-                    </Typography>
+            {/* <hr className="my-1 border-blue-gray-50" /> */}
+            <div className=" md:grid grid-cols-4 gap-4">
+              <CardBody className=" md:col-span-2 px-7  ">
+                <div className="">
+                  <h1 className="text-lg px-3 font-medium text-black my-2">
+                    Age
+                  </h1>
 
-                    <Typography
-                      variant="small"
-                      className="font-normal text-blue-gray-500"
-                    >
-                      {userDetails?.age ?? ""}
-                    </Typography>
-                  </li>
-                  <hr className="my-1 border-blue-gray-50" />
-                  <li className="flex items-center gap-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-semibold capitalize"
-                    >
-                      Email:
-                    </Typography>
-
-                    <Typography
-                      variant="small"
-                      className="font-normal text-blue-gray-500"
-                    >
-                      {userDetails?.userId.email ?? ""}
-                    </Typography>
-                  </li>
-                  <hr className="my-1 border-blue-gray-50" />
-                  <li className="flex items-center gap-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-semibold capitalize"
-                    >
-                      Location:
-                    </Typography>
-
-                    <Typography
-                      variant="small"
-                      className="font-normal text-blue-gray-500"
-                    >
-                      {/* {userDetails?.location ?? ""} */}
-                    </Typography>
-                  </li>
-                  <hr className="my-1 border-blue-gray-50" />
-                  <li className="flex items-center gap-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-semibold capitalize"
-                    >
-                      Education:
-                    </Typography>
-
-                    <Typography
-                      variant="small"
-                      className="font-normal text-blue-gray-500"
-                    >
-                      {userDetails?.education ?? ""}
-                    </Typography>
-                  </li>
-                  <hr className="my-1 border-blue-gray-50" />
-                  <li className="flex items-center gap-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-semibold capitalize"
-                    >
-                      Desired salary:
-                    </Typography>
-
-                    <Typography
-                      variant="small"
-                      className="font-normal text-blue-gray-500"
-                    >
-                      {userDetails?.salary ?? ""}
-                    </Typography>
-                  </li>
-                  <hr className="my-1 border-blue-gray-50" />
-                  <li className="flex items-center gap-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-semibold capitalize"
-                    >
-                      Desired role:
-                    </Typography>
-
-                    <Typography
-                      variant="small"
-                      className="font-normal text-blue-gray-500"
-                    >
-                      {userDetails?.previousrole ?? ""}
-                    </Typography>
-                  </li>
-                  <hr className="my-1 border-blue-gray-50" />
-                  <li className="flex items-center gap-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-semibold capitalize"
-                    >
-                      Experience:
-                    </Typography>
-
-                    <Typography
-                      variant="small"
-                      className="font-normal text-blue-gray-500"
-                    >
-                      {userDetails?.experirnce ?? ""}
-                    </Typography>
-                  </li>
-                </ul>
+                  <span className="text-center bg-gray-400 rounded-lg px-5 py-1  text-gray-900">
+                    {userDetails?.age}
+                  </span>
+                </div>
+                <div className="pt-4">
+                  <h1 className="text-lg px-1 font-medium text-black my-2">
+                    Desired role
+                  </h1>
+                  <span className="text-center bg-gray-400 rounded-lg px-5 py-1  text-gray-900">
+                    {userDetails?.previousrole}
+                  </span>
+                </div>
+                <div className="pt-4">
+                  <h1 className="text-lg px-1 font-medium text-black my-2">
+                    Desired salary
+                  </h1>
+                  <span className="text-center bg-gray-400 rounded-lg px-5 py-1  text-gray-900">
+                    {userDetails?.salary}
+                  </span>
+                </div>
+                <div className="pt-4">
+                  <h1 className="text-lg px-1 font-medium text-black my-2">
+                    Desired workmode
+                  </h1>
+                  <span className="text-center bg-gray-400 rounded-lg px-5 py-1  text-gray-900">
+                    {userDetails?.workmode}
+                  </span>
+                </div>
+              </CardBody>
+              <CardBody className="bg-gray-400  md:col-span-2 rounded-2xl mx-5 ">
+                <h1 className="font-bold text-black text-xl p-5">Contact me</h1>
+                <div>
+                  <span className=" px-6 font-medium text-black my-2">
+                    Email:
+                  </span>
+                  <span className="text-center bg-gray-400 rounded-lg font-semibold  text-gray-900">
+                    {userDetails?.link ?? ""}
+                  </span>
+                </div>
+                <div>
+                  <span className=" px-6 font-medium text-black my-2">
+                    Phone:
+                  </span>
+                  <span className="text-center bg-gray-400 rounded-lg font-semibold  text-gray-900">
+                    {userDetails?.userId.phone ?? ""}
+                  </span>
+                </div>
+                <div>
+                  <span className=" px-6 font-medium text-black my-2">
+                    Git:
+                  </span>
+                  <span className="text-center bg-gray-400 rounded-lg font-semibold  text-gray-900">
+                    {userDetails?.link ?? ""}
+                  </span>
+                </div>
+                <h1 className="font-bold text-black text-xl p-5 n ">Skill</h1>
+                <span className="text-center bg-gray-400 px-8 rounded-lg font-semibold  text-gray-900">
+                  {userDetails?.skill ?? ""}
+                </span>
               </CardBody>
             </div>
           </div>
