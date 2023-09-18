@@ -32,7 +32,7 @@ function ExampleHeader() {
     navigate("/");
   };
   return (
-    <nav className=" fixed  z-50 w-full h-14 bg-blue-gray-50 rounded-md     flex justify-between items-center px-4 md:px-4">
+    <nav className=" fixed top-0  z-50 w-full h-14 bg-blue-gray-50 rounded-md     flex justify-between items-center px-4 md:px-4">
       <div>
         <img
           className="m-5 w-36"
@@ -51,7 +51,10 @@ function ExampleHeader() {
             Profile
           </li>
         </Link>
-        <li className="mx-[10px] cursor-pointer hover:text-red-300">Jobs</li>
+        <Link to={"/user/job"}>
+          <li className="mx-[10px] cursor-pointer hover:text-red-300">Jobs</li>
+        </Link>
+
         <li className="mx-[10px] cursor-pointer hover:text-red-300">Applied</li>
       </ul>
 
@@ -102,7 +105,7 @@ function ExampleHeader() {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link to={"/job/all-jobs"}>
+                <Link to={"/user/job"}>
                   <button
                     className={classNames(
                       "block px-4 py-2 text-sm  text-black  hover:text-red-500"

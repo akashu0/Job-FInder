@@ -3,6 +3,7 @@ import {
   recruiterRepository,
   jobRepository,
   profileRepository,
+  jobApplicationRepository,
 } from "../app/repository/mongo";
 import {
   createUser_UseCase,
@@ -14,6 +15,11 @@ import {
   listAllJobs_UseCase,
   updateUserProfile_Usecase,
   getUserProfileData_UseCase,
+  jobDataById_UseCase,
+  titleDistinct_UseCase,
+  filterJobs_UseCase,
+  applyNewJob_UseCase,
+  isExistingApplication_UseCase,
 } from "../useCase";
 
 const useCases = {
@@ -29,6 +35,11 @@ const useCases = {
 const jobuseCase = {
   createJobPost_UseCase,
   listAllJobs_UseCase,
+  jobDataById_UseCase,
+  titleDistinct_UseCase,
+  filterJobs_UseCase,
+  applyNewJob_UseCase,
+  isExistingApplication_UseCase,
 };
 
 const repository = {
@@ -36,6 +47,7 @@ const repository = {
   recruiterRepository,
   jobRepository,
   profileRepository,
+  jobApplicationRepository,
 };
 
 export = {

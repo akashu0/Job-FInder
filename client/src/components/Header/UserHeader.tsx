@@ -25,9 +25,9 @@ function UserHeader() {
   useEffect(() => {
     dispatch(fetchUser() as any);
 
-    return () => {
-      dispatch(clearUserDetails());
-    };
+    // return () => {
+    //   dispatch(clearUserDetails());
+    // };
   }, []);
 
   const handleLogout = () => {

@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import UserDashboard from "../../components/User/Dashboard/UserDashboard";
 import UserProfile from "../../components/User/UserProfile/UserProfile";
 import ExampleHeader from "../../components/Header/ExampleHeader";
+import DisplayAllJobs from "../../components/job/DisplayAllJobs";
 
 function UserHomePage() {
   return (
@@ -16,6 +17,7 @@ function UserHomePage() {
       <Routes>
         <Route path="/dashboard" element={<UserDashboard />} />
         <Route path="/profile" element={<UserProfile />} />
+        <Route path="/job" element={<DisplayAllJobs />} />
       </Routes>
     </div>
     // <div className="flex">

@@ -3,6 +3,7 @@ import { userData } from "../../../axios/api/user/userDetails";
 
 export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
   const response = await userData();
+  // console.log(response, "response from userdata");
   return response;
 });
 

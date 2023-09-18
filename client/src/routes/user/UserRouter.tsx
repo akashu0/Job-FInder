@@ -8,7 +8,7 @@ function UserRouter() {
     <Routes>
       <Route path="/*" element={<UserHomePage />} />
       <Route path="/login" element={<UserLoginPage />} />
-      <Route path="/register-user" element={<UserRegisterPage />} />
+      <Route path="/register" element={<UserRegisterPage />} />
       {/* <Route path="/home" element={<UserHomePage />} /> */}
     </Routes>
   );

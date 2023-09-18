@@ -4,11 +4,20 @@ import { jobController } from "../controllers";
 
 export = (dependencies: DepenteniciesData) => {
   const router = express.Router();
-  const { createJobController, listAllJobsController } =
-    jobController(dependencies);
+  const {
+    createJobController,
+    listAllJobsController,
+    jobDataByIdController,
+    titleDistinctController,
+    filterJobsController,
+  } = jobController(dependencies);
 
   router.post("/create_job", createJobController);
-  router.get("/getall_job", listAllJobsController);
+  router.put("/update-job/:id");
+  router.get("/all-jobs", listAllJobsController);
+  router.get("/job-data/:id", jobDataByIdController);
+  router.get("/distinct/:field", titleDistinctController);
+  router.post("/filter-jobs", filterJobsController);
 
   return router;
 };

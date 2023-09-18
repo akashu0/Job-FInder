@@ -7,6 +7,11 @@ import { createJobPost_UseCase } from "./jobs";
 import { listAllJobs_UseCase } from "./jobs";
 import { updateUserProfile_Usecase } from "./profile";
 import { getUserProfileData_UseCase } from "./profile";
+import { jobDataById_UseCase } from "./jobs";
+import { titleDistinct_UseCase } from "./jobs";
+import { filterJobs_UseCase } from "./jobs";
+import { applyNewJob_UseCase } from "./job-application";
+import { isExistingApplication_UseCase } from "./job-application";
 
 export {
   createUser_UseCase,
@@ -18,4 +23,9 @@ export {
   listAllJobs_UseCase,
   updateUserProfile_Usecase,
   getUserProfileData_UseCase,
+  jobDataById_UseCase,
+  titleDistinct_UseCase,
+  filterJobs_UseCase,
+  applyNewJob_UseCase,
+  isExistingApplication_UseCase,
 };

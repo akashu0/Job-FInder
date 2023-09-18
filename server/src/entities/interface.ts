@@ -9,6 +9,7 @@ export interface respositoryData {
   recruiterRepository: any;
   jobRepository: any;
   profileRepository: any;
+  jobApplicationRepository: any;
 }
 
 export interface useCaseData {
@@ -24,4 +25,9 @@ export interface useCaseData {
 export interface jobCaseData {
   createJobPost_UseCase: any;
   listAllJobs_UseCase: any;
+  jobDataById_UseCase: any;
+  titleDistinct_UseCase: any;
+  filterJobs_UseCase: any;
+  applyNewJob_UseCase: any;
+  isExistingApplication_UseCase: any;
 }

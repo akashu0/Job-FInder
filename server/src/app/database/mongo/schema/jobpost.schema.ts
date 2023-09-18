@@ -5,10 +5,7 @@ interface IJobPost {
   title: string;
   role: string;
   department: string;
-  salary: {
-    minSalary: number;
-    maxSalary: number;
-  };
+  salary: number;
   reponsibility: string;
   requirements: string;
   experience: string;
@@ -28,10 +25,7 @@ interface jobDoc extends mongoose.Document {
   title: string;
   role: string;
   department: string;
-  salary: {
-    minSalary: number;
-    maxSalary: number;
-  };
+  salary: number;
   reponsibility: string;
   requirements: string;
   experience: string;
@@ -57,14 +51,8 @@ const jobPostSchema = new mongoose.Schema<IJobPost>({
     required: true,
   },
   salary: {
-    minSalary: {
-      type: Number,
-      required: true,
-    },
-    maxSalary: {
-      type: Number,
-      required: true,
-    },
+    type: Number,
+    required: true,
   },
   reponsibility: {
     type: String,

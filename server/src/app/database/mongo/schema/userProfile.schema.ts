@@ -104,12 +104,6 @@ const userProfileSchema = new mongoose.Schema({
       type: String,
     },
   },
-  applied: [
-    {
-      type: mongoose.Types.ObjectId,
-      ref: "jobpost",
-    },
-  ],
   project: {
     type: String,
   },

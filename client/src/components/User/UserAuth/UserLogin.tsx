@@ -52,7 +52,7 @@ function UserLogin() {
 
         notify("Login success", "success");
         setTimeout(() => {
-          navigate("/user/home");
+          navigate("/user/dashboard");
         }, 2000);
       })
       .catch((error: any) => {
