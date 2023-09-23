@@ -34,3 +34,13 @@ export interface UserDataPayload {
   previousrole: string;
   experirnce: string;
 }
+
+export interface RecruiterRegisterPayload extends LoginPayload {
+  _id: string;
+  companyName: string;
+  industry: string;
+  confirmPassword: string;
+  location: string;
+  image: string;
+  about: string;
+}

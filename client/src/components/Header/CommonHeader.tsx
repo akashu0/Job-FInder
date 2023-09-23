@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function CommonHeader() {
   const navigator = [
-    { name: "Recrutier Login", href: "recrutier/login", current: false },
+    { name: "Recrutier Login", href: "recruiter/login", current: false },
     { name: "Register", href: "user/register-user", current: false },
     { name: "Login", href: "user/login", current: true },
   ];

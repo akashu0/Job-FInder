@@ -13,6 +13,9 @@ const apiConfig = {
 
   applyjob: `${configKeys.API_URL}job-application/create-application`,
   isApplied: `${configKeys.API_URL}job-application/is-applied`,
+
+  recruiterData: `${configKeys.API_URL}recruiter/recruiter-data`,
+  recruiterLogin: `${configKeys.API_URL}recruiter/recruiter_login`,
 };
 
 export default apiConfig;
